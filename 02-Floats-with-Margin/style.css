@@ -1,0 +1,37 @@
+main, aside {
+  /* Setting the height to be 100% of the viewport height for visibility */
+  height: 100vh;
+}
+
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+main {
+  background-color: orangered;
+
+  /* 
+    - The width of this plus any floated elements next to it MUST EQUAL 100%
+    - Since we have margin on one of the elements here, we MUST include that in our calculation
+    - 70 + 28 + 2 = 100 
+  */
+  width: 70%;
+
+  float: left;
+}
+
+aside {
+  background-color: lawngreen;
+
+  /* 
+    - The width of this plus any floated elements next to it MUST EQUAL 100%
+    - Since we have margin on one of the elements here, we MUST include that in our calculation
+    - 70 + 28 + 2 = 100 
+  */
+  width: 28%;
+  margin-right: 2%;
+
+  float: left;
+}

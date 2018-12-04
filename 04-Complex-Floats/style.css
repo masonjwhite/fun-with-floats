@@ -1,0 +1,34 @@
+/* Just setting a border to make it a bit more visual */
+.container {
+  border: 5px solid palegoldenrod;
+}
+
+/*
+  Clearfix for container
+*/
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+article {
+  /* Just for visual purposes */
+  height: 200px;
+  background-color: maroon;
+  color: white;
+
+  /*
+    - I want 3 articles per row
+    - I want 1% margin on all sides
+    - Watch how this changes our 100% calculation
+    - 31.3 + 31.3 + 31.3 + 6 = 100%
+    - What's the "6" in this case?
+      - Its the margin from each side of all 3 articles per row
+      - See the illustration below
+      - 1% <article> 1% 1% <article> 1% 1% <article> 1%
+  */
+  float: left;
+  margin: 1%; /* 1% margin on all sides */
+  width: 31.333333%; /* Adjusting our calculation to account for 1% margins on left and right
+}

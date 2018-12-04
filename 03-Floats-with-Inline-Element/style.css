@@ -1,0 +1,38 @@
+main {
+  /* Setting the height to be 100% of the viewport height for visibility */
+  height: 100vh;
+}
+
+/* Just setting a border to make it a bit more visual */
+.container {
+  border: 5px solid palegoldenrod;
+}
+
+/*
+  Clearfix for container
+  - Note what happens when you comment this block out
+  - Watch how the container (yellow border) collapses to the height of the non-floated (p) element
+  - Weird huh? It doesn't collapse to 0 like we saw before!
+  - That's because in the previous examples ALL of the container's children were floated
+  - Here we only have one floated element (main) and the other is an inline p element
+*/
+.container::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+main {
+  background-color: orangered;
+
+  /* 
+    - Now that we have one floated element and one inline element let's observe what happens
+    - See how they still sit next to eachother? That's beacuse p is an inline element!
+    - Try removing the float and see what happens!
+    - The p gets kicked to the next line because "main" is a block level element and takes up all the space unless floated!
+    - REMEMBER: The float property is critical to get block elements to behave like inline elements
+  */
+  width: 70%;
+
+  float: left;
+}
